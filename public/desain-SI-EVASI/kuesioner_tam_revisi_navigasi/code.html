@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Evaluasi Mandiri - TAM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f4f3f6",
+                        "inverse-on-surface": "#f1f0f3",
+                        "surface-variant": "#e3e2e5",
+                        "on-primary-container": "#87a4cc",
+                        "inverse-surface": "#2f3033",
+                        "on-surface-variant": "#43474e",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "background": "#F5F7FA",
+                        "primary": "#002444",
+                        "outline": "#73777f",
+                        "secondary-container": "#8ac3ff",
+                        "on-tertiary-container": "#c49b5f",
+                        "on-tertiary-fixed": "#291800",
+                        "surface-dim": "#dad9dd",
+                        "secondary": "#1f6298",
+                        "on-background": "#1a1c1e",
+                        "on-surface": "#1a1c1e",
+                        "on-secondary-fixed": "#001d34",
+                        "surface-container": "#eeedf1",
+                        "primary-fixed": "#d2e4ff",
+                        "surface-container-high": "#e9e8eb",
+                        "primary-fixed-dim": "#abc9f2",
+                        "inverse-primary": "#abc9f2",
+                        "surface-bright": "#faf9fc",
+                        "tertiary-fixed": "#ffddb1",
+                        "tertiary-fixed-dim": "#ecbf80",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5f410c",
+                        "outline-variant": "#c3c6cf",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1b3a5c",
+                        "surface-container-highest": "#e3e2e5",
+                        "tertiary-container": "#4f3300",
+                        "on-primary-fixed": "#001c38",
+                        "secondary-fixed-dim": "#9bcbff",
+                        "on-secondary-container": "#005084",
+                        "secondary-fixed": "#d0e4ff",
+                        "surface": "#faf9fc",
+                        "on-primary-fixed-variant": "#2b486b",
+                        "surface-tint": "#436084",
+                        "on-secondary-fixed-variant": "#004a7a",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#331f00",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "1rem",
+                        "margin-desktop": "2rem",
+                        "margin-mobile": "1rem",
+                        "container-max": "1440px",
+                        "gutter": "1.5rem",
+                        "stack-lg": "1.5rem",
+                        "stack-sm": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "display-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-sm": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "display-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .custom-radio:checked + div {
+            background-color: #1B3A5C;
+            border-color: #1B3A5C;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-h-screen relative w-full">
+<!-- TopNavBar -->
+<header class="w-full bg-surface-container-lowest border-b border-outline-variant py-stack-sm sticky top-0 z-50">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex items-center h-[56px]">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">assured_workload</span>
+<span class="font-display-sm text-display-sm text-primary">SISTEM EVALUASI SAKTI</span>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto bg-surface-container-lowest p-margin-mobile md:p-margin-desktop">
+<div class="max-w-4xl mx-auto space-y-stack-lg">
+<!-- Header & Progress -->
+<div class="space-y-4">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface">Kuesioner Penerimaan Teknologi (TAM)</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Silakan isi kuesioner berikut untuk mengevaluasi sistem. Pilihlah jawaban yang paling sesuai dengan pendapat Anda.</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Langkah 2 dari 3 — Penerimaan Teknologi (TAM)</span>
+<span>66%</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2.5">
+<div class="bg-[#2E6DA4] h-2.5 rounded-full" style="width: 66%"></div>
+</div>
+</div>
+</div>
+<!-- Questionnaire Form -->
+<form class="space-y-stack-lg">
+<!-- Construct 1: Perceived Usefulness -->
+<div class="space-y-4">
+<h3 class="font-display-sm text-display-sm text-on-surface border-b border-outline-variant pb-2">Perceived Usefulness (Kemanfaatan)</h3>
+<div class="bg-white rounded-[8px] border border-[#DDE3EC] shadow-[0_1px_4px_rgba(0,0,0,0.05)] p-4 sm:p-6 flex flex-col md:flex-row gap-4 md:items-center justify-between">
+<p class="font-body-md text-body-md text-on-surface flex-1">1. Menggunakan sistem ini meningkatkan kinerja saya dalam menyelesaikan tugas evaluasi.</p>
+<div class="flex gap-2 justify-between md:justify-end shrink-0">
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_1" type="radio" value="1"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">STS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_1" type="radio" value="2"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">TS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_1" type="radio" value="3"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">N</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_1" type="radio" value="4"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">S</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_1" type="radio" value="5"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">SS</div>
+</label>
+</div>
+</div>
+<div class="bg-white rounded-[8px] border border-[#DDE3EC] shadow-[0_1px_4px_rgba(0,0,0,0.05)] p-4 sm:p-6 flex flex-col md:flex-row gap-4 md:items-center justify-between">
+<p class="font-body-md text-body-md text-on-surface flex-1">2. Sistem ini membuat proses evaluasi menjadi lebih cepat.</p>
+<div class="flex gap-2 justify-between md:justify-end shrink-0">
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_2" type="radio" value="1"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">STS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_2" type="radio" value="2"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">TS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_2" type="radio" value="3"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">N</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_2" type="radio" value="4"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">S</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="pu_2" type="radio" value="5"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">SS</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Construct 2: Perceived Ease of Use -->
+<div class="space-y-4">
+<h3 class="font-display-sm text-display-sm text-on-surface border-b border-outline-variant pb-2">Perceived Ease of Use (Kemudahan Penggunaan)</h3>
+<div class="bg-white rounded-[8px] border border-[#DDE3EC] shadow-[0_1px_4px_rgba(0,0,0,0.05)] p-4 sm:p-6 flex flex-col md:flex-row gap-4 md:items-center justify-between">
+<p class="font-body-md text-body-md text-on-surface flex-1">3. Saya merasa mudah mempelajari cara menggunakan sistem ini.</p>
+<div class="flex gap-2 justify-between md:justify-end shrink-0">
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="peou_1" type="radio" value="1"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">STS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="peou_1" type="radio" value="2"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">TS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="peou_1" type="radio" value="3"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">N</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="peou_1" type="radio" value="4"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">S</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="peou_1" type="radio" value="5"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">SS</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Construct 3: Attitude Toward Using -->
+<div class="space-y-4">
+<h3 class="font-display-sm text-display-sm text-on-surface border-b border-outline-variant pb-2">Attitude Toward Using (Sikap Penggunaan)</h3>
+<div class="bg-white rounded-[8px] border border-[#DDE3EC] shadow-[0_1px_4px_rgba(0,0,0,0.05)] p-4 sm:p-6 flex flex-col md:flex-row gap-4 md:items-center justify-between">
+<p class="font-body-md text-body-md text-on-surface flex-1">4. Menggunakan sistem ini adalah ide yang baik.</p>
+<div class="flex gap-2 justify-between md:justify-end shrink-0">
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="atu_1" type="radio" value="1"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">STS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="atu_1" type="radio" value="2"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">TS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="atu_1" type="radio" value="3"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">N</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="atu_1" type="radio" value="4"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">S</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="atu_1" type="radio" value="5"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">SS</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Construct 4: Behavioral Intention to Use -->
+<div class="space-y-4">
+<h3 class="font-display-sm text-display-sm text-on-surface border-b border-outline-variant pb-2">Behavioral Intention to Use (Niat Perilaku)</h3>
+<div class="bg-white rounded-[8px] border border-[#DDE3EC] shadow-[0_1px_4px_rgba(0,0,0,0.05)] p-4 sm:p-6 flex flex-col md:flex-row gap-4 md:items-center justify-between">
+<p class="font-body-md text-body-md text-on-surface flex-1">5. Saya berniat untuk menggunakan sistem ini di masa mendatang.</p>
+<div class="flex gap-2 justify-between md:justify-end shrink-0">
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="bi_1" type="radio" value="1"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">STS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="bi_1" type="radio" value="2"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">TS</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="bi_1" type="radio" value="3"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">N</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="bi_1" type="radio" value="4"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">S</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="custom-radio sr-only" name="bi_1" type="radio" value="5"/>
+<div class="w-[40px] h-[40px] rounded border border-[#DDE3EC] flex items-center justify-center font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-low">SS</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-6 flex justify-end gap-4 border-t border-outline-variant">
+<button class="h-[40px] px-6 rounded border-[1.5px] border-[#1B3A5C] text-[#1B3A5C] font-label-md text-label-md hover:bg-surface-container-low transition-colors" type="button">
+                            Kembali
+                        </button>
+<button class="h-[40px] px-6 rounded bg-[#1B3A5C] text-white font-label-md text-label-md disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary transition-colors" disabled="" type="submit">
+                            Kirim Jawaban
+                        </button>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest text-on-surface-variant dark:text-on-surface font-label-sm text-label-sm w-full py-stack-md border-t border-outline-variant flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-4">
+<div class="font-display-sm text-display-sm font-bold text-primary dark:text-primary-fixed-dim">
+                    © 2024 Sistem Evaluasi SAKTI - Institusi Pemerintah Republik Indonesia
+                </div>
+<div class="flex flex-wrap gap-4 justify-center">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary underline transition-colors" href="#">Beranda</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary underline transition-colors" href="#">Panduan</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary underline transition-colors" href="#">Kontak</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary underline transition-colors" href="#">Kebijakan Privasi</a>
+</div>
+</div>
+</footer>
+</div>
+<script>
+        // Simple logic to enable button when all groups have a selection
+        const form = document.querySelector('form');
+        const submitBtn = document.querySelector('button[type="submit"]');
+        const requiredGroups = ['pu_1', 'pu_2', 'peou_1', 'atu_1', 'bi_1'];
+
+        form.addEventListener('change', () => {
+            let allAnswered = true;
+            for (const group of requiredGroups) {
+                if (!document.querySelector(`input[name="${group}"]:checked`)) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+            submitBtn.disabled = !allAnswered;
+        });
+    </script>
+</body></html>
