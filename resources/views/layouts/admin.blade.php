@@ -20,7 +20,7 @@
 <body class="bg-[#F5F7FA] text-on-surface font-body-md min-h-screen flex" x-data="{ sidebarOpen: false }">
 
 <!-- SideNavBar -->
-<aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'" class="w-[260px] h-full fixed left-0 top-0 bg-primary dark:bg-primary-container text-on-primary font-body-md text-body-md border-r border-outline-variant flex flex-col h-screen overflow-y-auto px-stack-sm py-stack-md z-50 sidebar-transition">
+<aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'" class="w-[260px] h-full fixed left-0 top-0 bg-primary dark:bg-primary-container text-on-primary font-body-md text-body-md border-r border-outline-variant flex flex-col overflow-y-auto px-stack-sm py-stack-md z-50 sidebar-transition">
     <div class="flex items-center gap-3 mb-8 px-4 mt-2 md:mt-0">
         <div class="w-10 h-10 rounded bg-white/20 flex items-center justify-center shrink-0">
             <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">assured_workload</span>
@@ -89,11 +89,8 @@
             <h1 class="font-display-sm text-display-sm font-bold m-0 hidden sm:block">@yield('page-title', 'Dashboard')</h1>
         </div>
         <div class="flex items-center gap-4">
-            <span class="hidden md:inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary text-white">
-                Admin
-            </span>
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs">
+                <div class="px-2.5 py-0.5  rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs">
                     {{ strtoupper(substr(auth()->user()->name, 0, 2)) }}
                 </div>
                 <div class="hidden md:flex flex-col">
@@ -128,6 +125,44 @@
     </main>
 </div>
 
+@include('components.notification')
+
+<x-modal name="confirm-delete" focusable>
+    <div class="p-6">
+        <h3 class="font-display-sm text-lg font-semibold text-primary mb-2">Konfirmasi Hapus</h3>
+        <p id="confirm-delete-message" class="text-on-surface-variant mb-4">Anda yakin ingin menghapus item ini?</p>
+        <div class="flex justify-end gap-2">
+            <button type="button" class="h-[40px] px-4 rounded border border-outline-variant text-on-surface-variant" x-on:click="$dispatch('close-modal','confirm-delete')">Batal</button>
+            <button id="confirm-delete-yes" type="button" class="h-[40px] px-4 rounded bg-error text-white">Hapus</button>
+        </div>
+    </div>
+</x-modal>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    window.__pendingDeleteForm = null;
+    document.body.addEventListener('click', function(e){
+        var btn = e.target.closest('[data-confirm-delete]');
+        if(!btn) return;
+        var form = btn.closest('form');
+        var name = btn.getAttribute('data-confirm-name') || (form ? form.getAttribute('data-confirm-name') : null) || 'item';
+        e.preventDefault();
+        window.__pendingDeleteForm = form;
+        var msg = document.getElementById('confirm-delete-message');
+        if(msg) msg.textContent = 'Hapus ' + name + '?';
+        window.dispatchEvent(new CustomEvent('open-modal',{detail: 'confirm-delete'}));
+    });
+    var yes = document.getElementById('confirm-delete-yes');
+    if(yes) yes.addEventListener('click', function(){
+        if(window.__pendingDeleteForm){
+            window.__pendingDeleteForm.submit();
+            window.__pendingDeleteForm = null;
+            window.dispatchEvent(new CustomEvent('close-modal',{detail: 'confirm-delete'}));
+        }
+    });
+});
+</script>
+
 <!-- Alpine.js -->
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
 <!-- Chart.js -->
@@ -135,3 +170,4 @@
 @stack('scripts')
 </body>
 </html>
+

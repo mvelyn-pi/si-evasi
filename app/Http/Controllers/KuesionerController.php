@@ -191,7 +191,7 @@ class KuesionerController extends Controller
         });
 
         return redirect()->route('kuesioner.selesai')
-            ->with('kode', $kode);
+            ->with('kode_responden', $kode);
     }
 
     /** Halaman selesai */

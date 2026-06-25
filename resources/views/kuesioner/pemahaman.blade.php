@@ -12,7 +12,7 @@
         <div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant flex flex-col gap-2 shadow-[0_1px_4px_rgba(0,0,0,0.05)]">
             <div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
                 <span>Langkah 1 dari 3 — Pemahaman Pengguna</span>
-                <span>33%</span>
+                <span>1</span>
             </div>
             <div class="w-full bg-surface-variant rounded-full h-2.5">
                 <div class="bg-[#2E6DA4] h-2.5 rounded-full" style="width: 33%"></div>

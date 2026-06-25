@@ -34,7 +34,7 @@ class PolresController extends Controller
 
     public function edit(Polres $polre)
     {
-        return view('admin.polres.edit', ['polres' => $polre]);
+        return view('admin.polres.edit', ['polre' => $polre]);
     }
 
     public function update(Request $request, Polres $polre)

@@ -41,9 +41,9 @@
                             <a href="{{ route('admin.polres.edit', $polres) }}" class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Edit">
                                 <span class="material-symbols-outlined text-[18px]">edit</span>
                             </a>
-                            <form action="{{ route('admin.polres.destroy', $polres) }}" method="POST" class="inline" onsubmit="return confirm('Hapus Polres {{ $polres->nama_polres }}?')">
+                            <form action="{{ route('admin.polres.destroy', $polres) }}" method="POST" class="inline" data-confirm-name="Polres {{ $polres->nama_polres }}">
                                 @csrf @method('DELETE')
-                                <button type="submit" class="w-8 h-8 rounded border border-error/50 flex items-center justify-center text-error hover:bg-error-container transition-colors disabled:opacity-50 disabled:cursor-not-allowed" {{ $polres->respondens_count > 0 ? 'disabled title="Tidak dapat dihapus karena memiliki responden"' : 'title="Hapus"' }}>
+                                <button type="button" data-confirm-delete data-confirm-name="Polres {{ $polres->nama_polres }}" class="w-8 h-8 rounded border border-error/50 flex items-center justify-center text-error hover:bg-error-container transition-colors disabled:opacity-50 disabled:cursor-not-allowed" {{ $polres->respondens_count > 0 ? 'disabled title="Tidak dapat dihapus karena memiliki responden"' : 'title="Hapus"' }}>
                                     <span class="material-symbols-outlined text-[18px]">delete</span>
                                 </button>
                             </form>

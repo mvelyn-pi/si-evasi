@@ -73,9 +73,9 @@
                             <a href="{{ route('admin.pertanyaan.edit', $p) }}" class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Edit">
                                 <span class="material-symbols-outlined text-[16px]">edit</span>
                             </a>
-                            <form action="{{ route('admin.pertanyaan.destroy', $p) }}" method="POST" class="inline" onsubmit="return confirm('Hapus pertanyaan ini?')">
+                            <form action="{{ route('admin.pertanyaan.destroy', $p) }}" method="POST" class="inline" data-confirm-name="pertanyaan nomor {{ $p->nomor_item }}">
                                 @csrf @method('DELETE')
-                                <button type="submit" class="w-8 h-8 rounded border border-error/50 flex items-center justify-center text-error hover:bg-error-container transition-colors" title="Hapus">
+                                <button type="button" data-confirm-delete data-confirm-name="pertanyaan nomor {{ $p->nomor_item }}" class="w-8 h-8 rounded border border-error/50 flex items-center justify-center text-error hover:bg-error-container transition-colors" title="Hapus">
                                     <span class="material-symbols-outlined text-[16px]">delete</span>
                                 </button>
                             </form>

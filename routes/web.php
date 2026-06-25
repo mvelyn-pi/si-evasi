@@ -83,7 +83,11 @@ Route::middleware(['auth', 'evaluator'])->prefix('evaluator')->name('evaluator.'
 // ─── Login Redirect: setelah login, arahkan ke dashboard sesuai role ─────────
 
 Route::middleware('auth')->get('/dashboard', function () {
-    return auth()->user()->isAdmin()
-        ? redirect()->route('admin.dashboard')
-        : redirect()->route('evaluator.dashboard');
+    $user = \Illuminate\Support\Facades\Auth::user();
+
+    if ($user && method_exists($user, 'isAdmin') && $user->isAdmin()) {
+        return redirect()->route('admin.dashboard');
+    }
+
+    return redirect()->route('evaluator.dashboard');
 })->name('dashboard');

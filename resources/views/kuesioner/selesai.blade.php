@@ -38,7 +38,7 @@
                 <p class="font-display-sm text-display-sm text-primary tracking-widest font-mono">
                     {{ session('kode_responden') }}
                 </p>
-                <button class="mt-2 text-secondary font-label-md text-label-md flex items-center justify-center w-full gap-1 hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 rounded-sm" onclick="navigator.clipboard.writeText('{{ session('kode_responden') }}'); alert('Kode disalin!');">
+                <button class="mt-2 text-secondary font-label-md text-label-md flex items-center justify-center w-full gap-1 hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 rounded-sm" onclick="navigator.clipboard.writeText('{{ session('kode_responden') }}').then(function(){ window.dispatchEvent(new CustomEvent('notify',{detail:{message:'Kode disalin!', type:'success'}})); }).catch(function(){ window.dispatchEvent(new CustomEvent('notify',{detail:{message:'Gagal menyalin', type:'error'}})); });">
                     <span class="material-symbols-outlined text-[16px]">content_copy</span>
                     Salin Kode
                 </button>

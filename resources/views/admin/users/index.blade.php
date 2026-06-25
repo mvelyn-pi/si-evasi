@@ -49,9 +49,9 @@
                                 <span class="material-symbols-outlined text-[18px]">edit</span>
                             </a>
                             @if($user->id !== auth()->id())
-                            <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="inline" onsubmit="return confirm('Hapus akun {{ $user->name }}?')">
+                            <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="inline" data-confirm-name="akun {{ $user->name }}">
                                 @csrf @method('DELETE')
-                                <button type="submit" class="w-8 h-8 rounded border border-error/50 flex items-center justify-center text-error hover:bg-error-container transition-colors" title="Hapus">
+                                <button type="button" data-confirm-delete data-confirm-name="akun {{ $user->name }}" class="w-8 h-8 rounded border border-error/50 flex items-center justify-center text-error hover:bg-error-container transition-colors" title="Hapus">
                                     <span class="material-symbols-outlined text-[18px]">delete</span>
                                 </button>
                             </form>
