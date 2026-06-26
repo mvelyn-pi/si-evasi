@@ -120,8 +120,6 @@ git clone https://github.com/mvelyn-pi/si-evasi.git
 cd SI-EVASI
 ```
 
-> Ganti `https://github.com/mvelyn-pi/si-evasi.git` dengan URL repositori yang sebenarnya.
-
 ---
 
 ### Opsi B: Melalui Download ZIP
