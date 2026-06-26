@@ -114,13 +114,13 @@ Buka **Command Prompt** atau **Git Bash**, lalu:
 cd C:\xampp\htdocs
 
 # Clone repositori
-git clone https://github.com/username/SI-EVASI.git
+git clone https://github.com/mvelyn-pi/si-evasi.git
 
 # Masuk ke folder proyek
 cd SI-EVASI
 ```
 
-> Ganti `https://github.com/username/SI-EVASI.git` dengan URL repositori yang sebenarnya.
+> Ganti `https://github.com/mvelyn-pi/si-evasi.git` dengan URL repositori yang sebenarnya.
 
 ---
 
@@ -273,4 +273,3 @@ Test yang tersedia:
 
 ---
 
-*Dikembangkan untuk penelitian skripsi Prodi Informatika.*
