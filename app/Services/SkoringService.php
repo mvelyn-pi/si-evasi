@@ -10,7 +10,6 @@ class SkoringService
 {
     /**
      * Hitung skor Pemahaman Pengguna.
-     * Rumus: rata-rata skor 10 item → rentang 1.00–5.00
      */
     public function hitungPemahaman(int $idResponden): float
     {
@@ -27,11 +26,6 @@ class SkoringService
 
     /**
      * Hitung skor TAM per konstruk dan keseluruhan.
-     *
-     * Keputusan desain: skor TAM keseluruhan = rata-rata dari 4 skor konstruk
-     * (bukan rata-rata langsung 16 item), sesuai Davis et al. (1989) dan
-     * Venkatesh & Davis (2000) yang memperlakukan setiap konstruk secara terpisah.
-     *
      * @return array{pu: float, peou: float, atu: float, bi: float, keseluruhan: float}
      */
     public function hitungTAM(int $idResponden): array
@@ -68,13 +62,6 @@ class SkoringService
 
     /**
      * Hitung skor SUS menggunakan rumus standar System Usability Scale.
-     *
-     * Rumus (Brooke, 1996):
-     *   - Item ganjil (1,3,5,7,9)  → nilai_konversi = skor - 1
-     *   - Item genap  (2,4,6,8,10) → nilai_konversi = 5 - skor
-     *   - Skor SUS = Σ nilai_konversi × 2.5
-     *
-     * Rentang hasil: 0.00 – 100.00
      */
     public function hitungSUS(int $idResponden): float
     {

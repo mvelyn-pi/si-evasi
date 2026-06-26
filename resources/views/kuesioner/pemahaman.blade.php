@@ -28,6 +28,7 @@
     }">
         @csrf
         
+        @include('kuesioner.partials.instruksi')
         <div class="space-y-4">
             @foreach($pertanyaans as $p)
             <div class="bg-white rounded-[8px] border border-[#DDE3EC] shadow-[0_1px_4px_rgba(0,0,0,0.05)] p-4 sm:p-6 flex flex-col md:flex-row gap-4 md:items-center justify-between">

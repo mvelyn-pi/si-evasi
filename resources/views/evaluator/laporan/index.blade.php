@@ -74,18 +74,20 @@
                 </tr>
             </thead>
             <tbody class="text-sm font-body-md divide-y divide-outline-variant/50">
-                @php $no = $data->firstItem(); @endphp
-                @forelse($data as $h)
-                @php
-                    function getBadgeClasses($kat) {
-                        if(str_contains($kat, 'Sangat Baik') || str_contains($kat, 'Sangat Tinggi')) return 'bg-[#d1fae5] text-[#065f46]';
-                        if(str_contains($kat, 'Baik') || str_contains($kat, 'Tinggi')) return 'bg-[#dbeafe] text-[#1e40af]';
-                        if(str_contains($kat, 'Cukup')) return 'bg-[#fef9c3] text-[#854d0e]';
-                        if(str_contains($kat, 'Rendah')) return 'bg-[#fee2e2] text-[#991b1b]';
-                        if(str_contains($kat, 'Sangat Rendah')) return 'bg-[#fce7f3] text-[#9d174d]';
-                        return 'bg-surface-variant text-on-surface';
+                @php 
+                    $no = $data->firstItem(); 
+                    if (!function_exists('getBadgeClasses')) {
+                        function getBadgeClasses($kat) {
+                            if(str_contains($kat, 'Sangat Baik') || str_contains($kat, 'Sangat Tinggi')) return 'bg-[#d1fae5] text-[#065f46]';
+                            if(str_contains($kat, 'Baik') || str_contains($kat, 'Tinggi')) return 'bg-[#dbeafe] text-[#1e40af]';
+                            if(str_contains($kat, 'Cukup')) return 'bg-[#fef9c3] text-[#854d0e]';
+                            if(str_contains($kat, 'Rendah')) return 'bg-[#fee2e2] text-[#991b1b]';
+                            if(str_contains($kat, 'Sangat Rendah')) return 'bg-[#fce7f3] text-[#9d174d]';
+                            return 'bg-surface-variant text-on-surface';
+                        }
                     }
                 @endphp
+                @forelse($data as $h)
                 <tr class="hover:bg-surface-container-low/30 transition-colors">
                     <td class="p-3 text-center text-on-surface-variant">{{ $no++ }}</td>
                     <td class="p-3 font-medium text-primary text-xs">{{ $h->responden->kode_responden }}</td>

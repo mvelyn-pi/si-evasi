@@ -14,7 +14,8 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 class LaporanExport implements FromQuery, WithHeadings, WithMapping, WithStyles, ShouldAutoSize, WithTitle
 {
     public function __construct(private ?int $idPolres = null)
-    {}
+    {
+    }
 
     public function query()
     {
@@ -89,10 +90,11 @@ class LaporanExport implements FromQuery, WithHeadings, WithMapping, WithStyles,
 
     public function styles(Worksheet $sheet): array
     {
+
         return [
             1 => [
-                'font'      => ['bold' => true, 'color' => ['argb' => 'FFFFFFFF']],
-                'fill'      => ['fillType' => 'solid', 'color' => ['argb' => 'FF1D4ED8']],
+                'font' => ['bold' => true, 'color' => ['argb' => 'FFFFFFFF'], 'name' => 'Inter'],
+                'fill' => ['fillType' => 'solid', 'color' => ['argb' => 'FF1B3A5C']],
                 'alignment' => ['horizontal' => 'center'],
             ],
         ];

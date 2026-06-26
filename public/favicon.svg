@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Background -->
+  <rect width="48" height="48" rx="10" fill="#1B3A5C"/>
+  <!-- Building / assured_workload shape -->
+  <!-- Roof/triangle top -->
+  <polygon points="24,6 40,17 8,17" fill="#ffffff" opacity="0.95"/>
+  <!-- Building body -->
+  <rect x="11" y="17" width="26" height="16" fill="#ffffff" opacity="0.95"/>
+  <!-- Columns / windows -->
+  <rect x="14" y="20" width="4" height="10" fill="#1B3A5C" opacity="0.7"/>
+  <rect x="22" y="20" width="4" height="10" fill="#1B3A5C" opacity="0.7"/>
+  <rect x="30" y="20" width="4" height="10" fill="#1B3A5C" opacity="0.7"/>
+  <!-- Base -->
+  <rect x="8" y="33" width="32" height="3" rx="1" fill="#ffffff" opacity="0.95"/>
+  <!-- Shield / checkmark overlay -->
+  <path d="M34 26 C34 22 37 21 40 20 C43 21 46 22 46 26 C46 30 43 33 40 34 C37 33 34 30 34 26Z" fill="#2D9E6B"/>
+  <polyline points="37,26 39,29 43,23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

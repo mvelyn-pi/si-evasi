@@ -28,6 +28,7 @@
     }">
         @csrf
         
+        @include('kuesioner.partials.instruksi')
         @php
             $grouped = $pertanyaans->groupBy('konstruk');
         @endphp

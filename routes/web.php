@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 // ─── Halaman Publik (Kuesioner) ─────────────────────────────────────────────
 
 Route::get('/', [KuesionerController::class, 'index'])->name('home');
+Route::view('/panduan', 'panduan')->name('panduan');
 
 Route::prefix('kuesioner')->name('kuesioner.')->group(function () {
     Route::get('/mulai', [KuesionerController::class, 'mulai'])->name('mulai');
