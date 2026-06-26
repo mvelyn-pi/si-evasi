@@ -117,7 +117,7 @@ cd C:\xampp\htdocs
 git clone https://github.com/mvelyn-pi/si-evasi.git
 
 # Masuk ke folder proyek
-cd SI-EVASI
+cd si-evasi
 ```
 
 ---
