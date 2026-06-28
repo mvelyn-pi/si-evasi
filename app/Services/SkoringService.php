@@ -121,9 +121,6 @@ class SkoringService
 
     /**
      * Hitung semua skor dan simpan ke tabel hasil_evaluasi.
-     *
-     * Dipanggil otomatis setelah responden submit tiap kuesioner.
-     * Menggunakan updateOrCreate agar data selalu konsisten meski dipanggil berulang.
      */
     public function simpanHasilEvaluasi(int $idResponden): HasilEvaluasi
     {

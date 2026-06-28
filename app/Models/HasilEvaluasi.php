@@ -30,7 +30,6 @@ class HasilEvaluasi extends Model
 
     /**
      * Accessor: skor TAM keseluruhan = rata-rata dari 4 konstruk.
-     * Pendekatan ini sesuai literatur TAM (Davis et al., 1989).
      */
     public function getSkorTamAttribute(): ?float
     {

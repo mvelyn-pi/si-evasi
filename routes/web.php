@@ -7,12 +7,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes — SI-EVASI (Sistem Evaluasi Aplikasi SAKTI)
-|--------------------------------------------------------------------------
+Web Routes — SI-EVASI (Sistem Evaluasi Aplikasi SAKTI)
 */
 
-// ─── Halaman Publik (Kuesioner) ─────────────────────────────────────────────
+// Halaman Publik (Kuesioner)
 
 Route::get('/', [KuesionerController::class, 'index'])->name('home');
 Route::view('/panduan', 'panduan')->name('panduan');
@@ -33,7 +31,7 @@ Route::prefix('kuesioner')->name('kuesioner.')->group(function () {
     Route::get('/selesai', [KuesionerController::class, 'selesai'])->name('selesai');
 });
 
-// ─── Auth (Breeze) ───────────────────────────────────────────────────────────
+// Auth (Breeze)
 
 require __DIR__ . '/auth.php';
 
@@ -43,7 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// ─── Admin Routes ────────────────────────────────────────────────────────────
+// Admin Routes 
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [Admin\DashboardController::class, 'index'])->name('dashboard');
@@ -70,7 +68,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/laporan/export-excel', [Admin\LaporanController::class, 'exportExcel'])->name('laporan.excel');
 });
 
-// ─── Evaluator Routes ────────────────────────────────────────────────────────
+// Evaluator Routes 
 
 Route::middleware(['auth', 'evaluator'])->prefix('evaluator')->name('evaluator.')->group(function () {
     Route::get('/dashboard', [Evaluator\DashboardController::class, 'index'])->name('dashboard');
@@ -81,7 +79,7 @@ Route::middleware(['auth', 'evaluator'])->prefix('evaluator')->name('evaluator.'
     Route::get('/laporan/export-excel', [Evaluator\LaporanController::class, 'exportExcel'])->name('laporan.excel');
 });
 
-// ─── Login Redirect: setelah login, arahkan ke dashboard sesuai role ─────────
+// Login Redirect: setelah login, arahkan ke dashboard sesuai role 
 
 Route::middleware('auth')->get('/dashboard', function () {
     $user = \Illuminate\Support\Facades\Auth::user();
